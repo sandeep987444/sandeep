@@ -1,13 +1,14 @@
-﻿
-<!DOCTYPE html>
-<html>
-<head>
-    <title>My page</title>
-</head>
-<body>
-<?php
-    $name ="Sandeep giri";
-    echo "My favourite lecturer is " . $name;
+﻿<?php
+
+function triangle_area($base, $height) {
+    $area = ($base * $height) / 2;
+    return $area;
+}
+
+// Example usage:
+$base = 5;
+$height = 8;
+$area = triangle_area($base, $height);
+echo "The area of the triangle is: " . $area;
+
 ?>
-</body>
-</html>
