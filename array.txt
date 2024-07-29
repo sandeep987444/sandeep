@@ -1,0 +1,30 @@
+<?php
+function findSingleNumber($arr) {
+    // Initialize an empty associative array to store counts of each number
+    $counts = array();
+    
+    // Iterate through the array and count occurrences of each number
+    foreach ($arr as $num) {
+        if (isset($counts[$num])) {
+            $counts[$num]++;
+        } else {
+            $counts[$num] = 1;
+        }
+    }
+    
+    // Iterate through the counts to find the number that appears only once
+    foreach ($counts as $num => $count) {
+        if ($count == 1) {
+            return $num; // Return the number that appears only once
+        }
+    }
+    
+    // If no such number is found (though the problem assumes exactly one such number exists)
+    return null;
+}
+
+// Example usage:
+$array = array(5, 3, 4, 3, 4);
+$singleNumber = findSingleNumber($array);
+echo "The single number that doesn't occur twice in the array [" . implode(', ', $array) . "] is: " . $singleNumber . "\n";
+?>
